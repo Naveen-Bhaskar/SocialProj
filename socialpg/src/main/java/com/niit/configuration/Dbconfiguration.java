@@ -12,6 +12,8 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.dao.UserDao;
+import com.niit.dao.UserDaoImpl;
 import com.niit.model.BlogComment;
 import com.niit.model.BlogPost;
 import com.niit.model.Friend;
@@ -54,6 +56,11 @@ public Dbconfiguration(){
 @Bean
 public HibernateTransactionManager hibTransManagement() {
 	return new HibernateTransactionManager(sessionFactory());
-	
+	}
+
+@Bean(name="userDao")
+public UserDao getUserDao() {
+	return new UserDaoImpl();
 }
+
 }
