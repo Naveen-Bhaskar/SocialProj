@@ -13,7 +13,7 @@ import com.niit.model.User;
 @Repository
 @Transactional
 
-public class UserDaoImpl {
+public class UserDaoImpl implements UserDao {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
